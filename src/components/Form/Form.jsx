@@ -9,7 +9,7 @@ const Form = () => {
     const loading = useSelector(selectLoading)
     const dispatch = useDispatch()
 
-    const urlValid = /(http(s)?:\/\/.).?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+    const urlValid = /(http(s)?:\/\/.).?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/g
 
     const {
         register,
@@ -32,7 +32,7 @@ const Form = () => {
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <input
-                        type="url"
+                        type="text"
                         placeholder="Shorten a link here..."
                         className={classes.input}
                         {...register('Url', {
