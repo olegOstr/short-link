@@ -44,12 +44,15 @@
     border: none;
     padding: 0.5rem 1rem;
     line-height: 1.5;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    outline-style: solid;
 
     @media (min-width: 767px) {
         flex-grow: 1;
         line-height: 2.5;
         padding: 0.5rem 1.5rem;
+
+        font-size: 1.25rem;
     }
 
     &[disabled] {

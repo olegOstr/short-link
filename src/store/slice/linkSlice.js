@@ -9,11 +9,10 @@ export const createShortLink = createAsyncThunk(
     }
 )
 
-const
-    initialState = {
-        items: [],
-        loading: 'idle',
-    }
+const initialState = {
+    items: [],
+    loading: 'idle',
+}
 
 const linkSlice = createSlice({
     name: 'links',
@@ -38,5 +37,8 @@ const linkSlice = createSlice({
         },
     }
 })
+
+export const selectLoading = state => state.links.loading
+export const selectLinks = state => state.links.items
 
 export default linkSlice.reducer
