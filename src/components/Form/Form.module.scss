@@ -22,7 +22,7 @@
     @media (min-width: 767px) {
         flex-direction: row;
     }
-    
+
     @media (min-width: 1024px) {
         background-image: url('../../images/bg-shorten-desktop.svg');
 
@@ -65,4 +65,15 @@
     color: var(--secondary-300);
     font-size: 14px;
     font-style: italic;
+
+    @media (max-width: 1024px) {
+        bottom: .1rem;
+
+    }
+
+    @media (max-width: 767px) {
+        width: 160px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
