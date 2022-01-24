@@ -1,19 +1,24 @@
 import {useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Button} from 'components/Button';
-import {selectLinks} from '../../store/slice/linkSlice';
+import {delShortLink, selectLinks} from '../../store/slice/linkSlice';
 import {motion, AnimatePresence} from 'framer-motion';
 import classes from './Shortens.module.scss';
 
 const Shortens = () => {
     const [copyLink, setCopyLink] = useState(null)
     const links = useSelector(selectLinks)
+    const dispatch = useDispatch()
 
     const copyToClip = (link) => {
         navigator.clipboard.writeText(link)
         .then(() => {
             setCopyLink(link)
         })
+    }
+
+    const linkDelete = (linkCode) => {
+        dispatch(delShortLink(linkCode))
     }
 
     if (!links?.length) return null;
@@ -36,6 +41,12 @@ const Shortens = () => {
                                 onClick={() => copyToClip(item.full_short_link2)}
                             >
                                 {copyLink === item.full_short_link2 ? 'Copied!' : 'Copy'}
+                            </Button>
+                            <Button
+                                variant="square"
+                                onClick={() => linkDelete(item.code)}
+                            >
+                                Delete Link
                             </Button>
                         </motion.div>
                     </AnimatePresence>

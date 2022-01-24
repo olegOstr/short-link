@@ -17,7 +17,11 @@ const initialState = {
 const linkSlice = createSlice({
     name: 'links',
     initialState,
-    reducers: {},
+    reducers: {
+        delShortLink(state, {payload}) {
+            state.items = state.items.filter(({code}) => code !== payload)
+        },
+    },
     extraReducers: {
         [createShortLink.rejected]: (state) => {
             state.loading = 'rejected'
@@ -38,6 +42,7 @@ const linkSlice = createSlice({
     }
 })
 
+export const {delShortLink} = linkSlice.actions
 export const selectLoading = state => state.links.loading
 export const selectLinks = state => state.links.items
 
