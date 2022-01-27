@@ -80,7 +80,7 @@ export const Header = () => {
                     }
                 </AnimatePresence>
 
-                <button className={classes.themeBtn} onClick={handleThemeChange}>
+                <button className={classes.themeBtn} onClick={handleThemeChange} aria-label='Change Color Theme'>
                     <IoSunny className={classes.theme}/>
                 </button>
 
