@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {IoMenu, IoMoonOutline, IoSunny} from 'react-icons/io5';
+import {IoMenu, IoSunny} from 'react-icons/io5';
 import {motion, AnimatePresence} from 'framer-motion';
 import useMatchMedia from 'use-match-media-hook';
 
